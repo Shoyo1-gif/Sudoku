@@ -9,6 +9,11 @@ public class Sudoku{
         {7,0,0,0,0,8,0,5,0};
         {0,2,9,0,0,1,0,0,6};
         {0,0,0,0,0,3,1,7,0};
-    }
+    };
+
+    private int[][] board;
+    public static final int empty = 0;
+    public static final int size = 9;
+    
     
 }
