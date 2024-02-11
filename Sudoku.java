@@ -6,7 +6,7 @@ public class Sudoku implements Runnable{
         Sudoku obj = new Sudoku();
         Thread thread = new Thread(obj);
         thread.start();
-        System.out.println("Hello world this is inside the main thread");
+        System.out.println("Hello world this thread is inside the main methodcan ");
 
     }
     /*public static int[][] Grid = {
