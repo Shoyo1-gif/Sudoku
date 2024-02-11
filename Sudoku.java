@@ -1,5 +1,15 @@
-public class Sudoku{
-    public static int[][] Grid = {
+public class Sudoku implements Runnable{
+    public void run(){
+        System.out.println("This is a thread outside the main");
+    }
+    public static void main(String[] args) {
+        Sudoku obj = new Sudoku();
+        Thread thread = new Thread(obj);
+        thread.start();
+        System.out.println("Hello world this is inside the main thread");
+
+    }
+    /*public static int[][] Grid = {
         {0,4,0,0,2,6,0,0,8};
         {8,3,0,0,7,0,0,0,5};
         {1,0,6,9,0,0,0,4,0};
@@ -13,7 +23,7 @@ public class Sudoku{
 
     private int[][] board;
     public static final int empty = 0;
-    public static final int size = 9;
+    public static final int size = 9;*/
     
     
 }
