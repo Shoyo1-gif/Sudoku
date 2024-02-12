@@ -1,5 +1,6 @@
 public class SudokuDisplay {
     public static void main(String[] args) {
+        //hard coded the sudoku values
         int[][] sudokuGrid = {
             {6,2,4,5,3,9,1,8,7},
             {5,1,9,7,2,8,6,3,4},
@@ -12,6 +13,7 @@ public class SudokuDisplay {
             {2,8,5,4,7,3,9,1,6},
         };
 
+        //Printed out the grid and the sudoku with a forloop
         for (int row = 0; row < sudokuGrid.length; row++) {
             for (int col = 0; col < sudokuGrid[row].length; col++) {
                 System.out.print(sudokuGrid[row][col] + " ");
@@ -20,7 +22,8 @@ public class SudokuDisplay {
             System.out.println();
             if ((row + 1) % 3 == 0 && row < 8) System.out.println("---------------------");
         }
-
+        
+        //Storing a validation result as boolean for true and false outputs
         boolean[] validationResult = new boolean[9];
         Thread[] validatorThreads = new Thread[9];
 
@@ -30,6 +33,7 @@ public class SudokuDisplay {
             validatorThreads[row].start();
         }
 
+        
         for (int row = 0; row < 9; row++) {
             try {
                 validatorThreads[row].join();
