@@ -33,7 +33,7 @@ public class SudokuDisplay {
             validatorThreads[row].start();
         }
 
-        
+        //put the try and catch block for the JOIN() method
         for (int row = 0; row < 9; row++) {
             try {
                 validatorThreads[row].join();
@@ -47,6 +47,20 @@ public class SudokuDisplay {
             validatorThreads[col] = new ColumnValidator(sudokuGrid, validationResult, col);
         validatorThreads[col].start();
         }
+
+        int index = 0;
+        for (int row = 0; row < 9; row += 3) {
+        for (int col = 0; col < 9; col += 3) {
+            validatorThreads[index] = new SubgridValidator(sudokuGrid, validationResult, row, col, index);
+            validatorThreads[index].start();
+            index++;
+            }
+        }
+
+        for (int i = 0; i < validationResult.length; i++) {
+            System.out.println("Subgrid " + i + " validation result: " + validationResult[i]);
+            }
+        
 
         //Print statement showing the validation for rows
         for (int row = 0; row < 9; row++) {
