@@ -48,20 +48,23 @@ public class SudokuDisplay {
         validatorThreads[col].start();
         }
 
+        //addded an index varialble as that will determine the subgrid
         int index = 0;
+        //started the subgrid thread
         for (int row = 0; row < 9; row += 3) {
-        for (int col = 0; col < 9; col += 3) {
+            for (int col = 0; col < 9; col += 3) {
             validatorThreads[index] = new SubgridValidator(sudokuGrid, validationResult, row, col, index);
             validatorThreads[index].start();
             index++;
             }
         }
 
+
+
+        //Print statement showing the validation for the subgrids
         for (int i = 0; i < validationResult.length; i++) {
             System.out.println("Subgrid " + i + " validation result: " + validationResult[i]);
             }
-        
-
         //Print statement showing the validation for rows
         for (int row = 0; row < 9; row++) {
             System.out.println("Row " + row + " validation result: " + validationResult[row]);
