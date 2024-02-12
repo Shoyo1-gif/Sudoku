@@ -15,10 +15,32 @@ public class SudokuDisplay {
         for (int row = 0; row < sudokuGrid.length; row++) {
             for (int col = 0; col < sudokuGrid[row].length; col++) {
                 System.out.print(sudokuGrid[row][col] + " ");
-            //    if ((col + 1) % 3 == 0 && col < 8) System.out.print("| ");
+                if ((col + 1) % 3 == 0 && col < 8) System.out.print("| ");
             }
             System.out.println();
-            //if ((row + 1) % 3 == 0 && row < 8) System.out.println("---------------------");
+            if ((row + 1) % 3 == 0 && row < 8) System.out.println("---------------------");
         }
+
+        boolean[] validationResult = new boolean[9];
+        Thread[] validatorThreads = new Thread[9];
+
+        for (int row = 0; row < 9; row++) {
+            validatorThreads[row] = new RowValidator(sudokuGrid, validationResult, row);
+            validatorThreads[row].start();
+        }
+
+        for (int row = 0; row < 9; row++) {
+            try {
+                validatorThreads[row].join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        for (int row = 0; row < 9; row++) {
+            System.out.println("Row " + row + " validation result: " + validationResult[row]);
+        }
+
     }
+    
 }
