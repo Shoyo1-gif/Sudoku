@@ -37,8 +37,19 @@ public class SudokuDisplay {
             }
         }
 
+        //for loop to bring column in to check each column
+        for(int col = 0; col < 9; col++){
+            validatorThreads[col] = new ColumnValidator(sudokuGrid, validationResult, col);
+        validatorThreads[col].start();
+        }
+
+        //Print statement showing the validation for rows
         for (int row = 0; row < 9; row++) {
             System.out.println("Row " + row + " validation result: " + validationResult[row]);
+        }
+        //Print statemnt showinf the validation for columns
+        for(int col = 0; col < 9; col++){
+            System.out.println("Col" + col + " Validation result: " + validationResult[col]);
         }
 
     }

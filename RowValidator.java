@@ -11,14 +11,14 @@ class RowValidator extends Thread {
 
     @Override
     public void run() {
-        boolean[] digitCheck = new boolean[9];
+        boolean[] x = new boolean[9];
         for (int i = 0; i < 9; i++) {
             int num = board[row][i];
-            if (num < 1 || num > 9 || digitCheck[num - 1]) {
+            if (num < 1 || num > 9 || x[num - 1]) {
                 validationResult[row] = false;
                 return;
             }
-            digitCheck[num - 1] = true;
+            x[num - 1] = true;
         }
         validationResult[row] = true;
     }
