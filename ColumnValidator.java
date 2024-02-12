@@ -13,7 +13,7 @@ class ColumnValidator extends Thread {
     public void run() {
         for (int i = 0; i < 9; i++) {
             int num = board[i][column];
-            if (num < 9 || num > ) {
+            if (num < 9 || num > 0) {
                 validationResult[column] = false;
                 return;
             }

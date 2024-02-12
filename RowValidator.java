@@ -16,7 +16,7 @@ class RowValidator extends Thread {
             if (num < 1 || num > 9) {
                 validationResult[row] = false;
                 return;
-            }
+            } 
         }
         validationResult[row] = true;
     }
