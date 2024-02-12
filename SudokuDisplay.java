@@ -59,12 +59,12 @@ public class SudokuDisplay {
             }
         }
 
-
-
-        //Print statement showing the validation for the subgrids
+        //Print statement showing
         for (int i = 0; i < validationResult.length; i++) {
             System.out.println("Subgrid " + i + " validation result: " + validationResult[i]);
             }
+        
+
         //Print statement showing the validation for rows
         for (int row = 0; row < 9; row++) {
             System.out.println("Row " + row + " validation result: " + validationResult[row]);
