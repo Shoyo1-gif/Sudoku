@@ -24,6 +24,7 @@ public class SudokuDisplay {
         boolean[] validationResult = new boolean[9];
         Thread[] validatorThreads = new Thread[9];
 
+        //for loop to start the row thread using .start()
         for (int row = 0; row < 9; row++) {
             validatorThreads[row] = new RowValidator(sudokuGrid, validationResult, row);
             validatorThreads[row].start();
@@ -37,7 +38,7 @@ public class SudokuDisplay {
             }
         }
 
-        //for loop to bring column in to check each column
+        //for loop to start the column thread using .start()
         for(int col = 0; col < 9; col++){
             validatorThreads[col] = new ColumnValidator(sudokuGrid, validationResult, col);
         validatorThreads[col].start();

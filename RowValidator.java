@@ -1,7 +1,7 @@
 class RowValidator extends Thread {
-    private final int[][] board;
-    private final boolean[] validationResult;
-    private final int row;
+    private int[][] board;
+    private boolean[] validationResult;
+    private int row;
 
     public RowValidator(int[][] board, boolean[] validationResult, int row) {
         this.board = board;
