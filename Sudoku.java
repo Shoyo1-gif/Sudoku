@@ -1,4 +1,4 @@
-public class SudokuDisplay {
+public class Sudoku{
     public static void main(String[] args) {
         //hard coded the sudoku values
         int[][] sudokuGrid = {

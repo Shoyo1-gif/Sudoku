@@ -7,3 +7,8 @@ Made A checker for sudoku game
 Java:
 Usage of MultiThreading 
 Backtracking
+For loops
+Extend Threads
+run() and start() methods
+
+Files:
