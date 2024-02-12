@@ -16,3 +16,5 @@ Sudoku.java- This is the main file to run. It has the main class and the sudoku 
 RowValidator- This class extends thread to run a code to validate rows
 ColumnValidator- This class extends thread to run a code to validate columns
 SubGridValidator- This class extends thread to run a code to validate sub-grids 3x3
+
+Author@ Janish
